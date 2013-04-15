@@ -5,11 +5,7 @@ Install with composer:
     {
         "require": {
             "sail/useragent": "1.0.*"
-        },
-        "repositories": [{
-            "type": "vcs",
-            "url": "https://github.com/rainphp/useragent"
-        }]
+        }
     }
 ```
 
