@@ -1,0 +1,25 @@
+{
+    "name": "sail/useragent",
+    "description": "Library to detect the browser and all its info (OS, Platform, ...)",
+    "keywords":["useragent","browser-detection"],
+    "homepage": "http://github.com/rainphp/useragent",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Federico Ulfo",
+            "email": "rainelemental@gmail.com",
+            "homepage": "http://github.com/rainphp"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Sail": "src/"
+        }
+    }
+}
+
+
