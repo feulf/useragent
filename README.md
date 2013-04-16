@@ -1,5 +1,6 @@
 #Sail\UserAgent
-This Library detect the browser and all its informations, it uses Dependency Injection to load a Parser library, so you can choose the level of detail you need from the detection.
+This Library detect the browser and all its informations, such as the browser name and version, the OS and the platform. 
+It uses Dependency Injection to load a Parser library, so you can choose the level of details you need from the detection.
 
 ##Parser
 - **Parser\Simple**, it detects the common browsers (Chrome, Safari, Firefox, MSIE), the basic OS (OS X, iOS, Windows, Linux), it detects the device (iPhone,iPad,Android Phone) and the type of useragent (browser, mobile browser, mailer, spider).
