@@ -23,20 +23,19 @@ class OS
         
         switch ($id) {
             case 'OS X':
-                list($id, $version) = OS\OSX::parse($ua);
+                list($id, $name) = OS\OSX::parse($ua);
                 break;
             case 'Windows':
-                list($id, $version) = OS\Windows::parse($ua);
+                list($id, $name) = OS\Windows::parse($ua);
                 break;
             case 'Linux':
-                list($id, $version) = OS\Linux::parse($ua);
+                list($id, $name) = OS\Linux::parse($ua);
                 break;
         }
         
         return array( 
-            'os'        => $os,
-            'version'   => $version,
-            'id'        => $id,
+            'id'      => $id,
+            'name'    => $name,
         );
         
     }
