@@ -22,16 +22,19 @@ class OSX
             preg_match("#OS ([\d_.]*)#", $ua, $match)) {
             $version = str_replace('_', '.', $match[1]);
             $name = "iOS $version";
+            $id = 'iOS';
         } else { // get the version
-            foreach (self::$version_list as $id => $name) {
-                if (preg_match("/$id/", $ua, $match)) {
+            foreach (self::$version_list as $v => $name) {
+                if (preg_match("/$v/", $ua, $match)) {
                     $version = str_replace('_', '.', $match[0]);
+                    $id = 'OS X';
+                    $name = "$id $version $name";
                     break;
                 }
             }
         }
 
-        return array($name, $version);
+        return array($id, $name);
     }
 
 }

@@ -26,12 +26,12 @@ class Windows{
     );
     
     public static function parse($ua) {
-        foreach (self::$version_list as $id => $version) {
+        foreach (self::$version_list as $id => $name) {
             if (strpos($ua, $id)) {
                 break;
             }
         }
         
-        return array($id, $version);
+        return array($id, $name);
     }
 }

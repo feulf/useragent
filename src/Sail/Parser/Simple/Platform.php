@@ -4,13 +4,14 @@ namespace Sail\Parser\Simple;
 
 class Platform
 {
-    
+
     // preg => name
     protected static $platform_list = array(
             // mailer
             'Outlook'     => 'Mailer',
             'MSOffice'    => 'Mailer',
             'Thunderbird' => 'Mailer',
+            'Sparrow'     => 'Mailer',
 
             // mobile
             'iPhone'      => 'Mobile',
@@ -36,7 +37,7 @@ class Platform
                 break;
             }
         }
-
+        
         return array( 
             'id'        => $id,
             'platform'  => $platform,
