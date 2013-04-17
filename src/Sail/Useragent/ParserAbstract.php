@@ -5,6 +5,9 @@ namespace Sail\Useragent;
 Abstract Class ParserAbstract implements ParserInterface
 {
 
+    const IS_MOBILE     = 'yes';
+    const IS_NOT_MOBILE = 'no';
+    
     // ua
     protected $ua;
 
@@ -35,31 +38,43 @@ Abstract Class ParserAbstract implements ParserInterface
     {
         return $this->ua;
     }
-    
-    protected function reset(){
 
-        $this->browser = array(
-            'id'        => '',
-            'name'      => '',
-            'version'   => '',
-        );
+    public function getBrowser()
+    {
+        return $this->browser;
+    }
 
-        $this->os = array(
-            'id'        => '',
-            'name'      => '',
-            'version'   => '',
-        );
+    public function getOS()
+    {
+        return $this->os;
+    }
 
-        $this->platform = array(
-            'type'      => '',
-            'name'      => '',
-            'is_mobile' => null,
-        );
-        
+    public function getPlatform()
+    {
+        return $this->platform;
+    }
+
+    public function isMobile()
+    {
+        return $this->is_mobile ? static::IS_MOBILE : static::IS_NOT_MOBILE;
+    }
+
+    public function getInfo()
+    {
+        return $this->info;
+    }
+
+    final private function reset(){
+
+        $this->browser = array();
+        $this->os = array();
+        $this->platform = array();
+        $this->is_mobile = null;
         $this->info = array(
             'browser'   => $this->browser,
             'os'        => $this->os,
             'platform'  => $this->platform,
+            'is_mobile' => $this->is_mobile,
             'ua'        => $this->ua,
         );
         
