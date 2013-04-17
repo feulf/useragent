@@ -8,22 +8,34 @@ class Simple extends ParserAbstract
 
     public function getBrowser() 
     {
-        return Simple\Browser::parse($this->ua);
+        if (!$this->browser) {
+            $this->browser = Simple\Browser::parse($this->ua);
+        }
+        return $this->browser;
     }
     
     public function getOS()
     {
-        return Simple\OS::parse($this->ua);
+        if (!$this->os) {
+            $this->os = Simple\OS::parse($this->ua);
+        }
+        return $this->os;
     }
     
     public function getPlatform()
     {
-        return Simple\Platform::parse($this->ua);
+        if (!$this->platform) {
+            $this->platform = Simple\Platform::parse($this->ua);
+        }
+        return $this->platform;
     }
     
     public function isMobile()
     {
-        return preg_match('#iPhone|iPad|Android|Mobile#', $this->ua);
+        if (!$this->is_mobile) {
+            $this->is_mobile = preg_match('#iPhone|iPad|Android|Mobile#', $this->ua);
+        }
+        return $this->is_mobile ? self::IS_MOBILE : self::IS_NOT_MOBILE;
     }
     
     public function getInfo()
