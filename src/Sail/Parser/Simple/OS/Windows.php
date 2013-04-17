@@ -22,7 +22,7 @@ class Windows{
             'XBLWP7'               => 'Windows Phone 7',
             'Windows NT 6.0'       => 'Windows Vista',
             'Windows NT 5.1'       => 'Windows XP',
-            'Unknown'              => 'Windows Unknown',
+            ''                     => 'Other Windows',
     );
     
     public static function parse($ua) {
@@ -32,6 +32,6 @@ class Windows{
             }
         }
         
-        return array($id, $name);
+        return array("Windows", $name);
     }
 }

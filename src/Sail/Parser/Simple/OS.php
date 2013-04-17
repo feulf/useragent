@@ -29,6 +29,7 @@ class OS
                 list($id, $name) = OS\Windows::parse($ua);
                 break;
             case 'Linux':
+            case 'X11':
                 list($id, $name) = OS\Linux::parse($ua);
                 break;
         }
