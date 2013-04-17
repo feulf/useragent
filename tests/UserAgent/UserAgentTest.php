@@ -11,15 +11,15 @@ class Sail_UserAgentTest extends PHPUnit_Framework_TestCase {
     protected $useragent = array(
         'Chrome' => array(
                 'string'=> "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17",
-                'os' => 'OS X',
-                'browser' => 'Chrome',
+                'os' => 'OS X 10.8.2 Mountain Lion',
+                'browser' => 'Chrome 24.0.1312.56',
                 'version' => '24.0.1312.56',
         ),
 
         'Safari' => array(
                 'string'=> "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_5; en-us) AppleWebKit/525.26.2 (KHTML, like Gecko) Version/3.2 Safari/525.26.12",
-                'os' => 'OS X',
-                'browser' => 'Safari',
+                'os' => 'OS X 10.5.5 Leopard',
+                'browser' => 'Safari 3.2',
                 'version' => '3.2',
         ),
         
@@ -65,11 +65,11 @@ class Sail_UserAgentTest extends PHPUnit_Framework_TestCase {
     public function testGetOS() {
         $ua = $this->useragent['Chrome'];
         $this->ua->setUA($ua['string']);
-        $this->assertTrue($this->ua->getOS()['os'] == $ua['os']);
+        $this->assertTrue($this->ua->getOS()['name'] == $ua['os']);
 
         $ua = $this->useragent['Safari'];
         $this->ua->setUA($ua['string']);
-        $this->assertTrue($this->ua->getOS()['os'] == $ua['os']);
+        $this->assertTrue($this->ua->getOS()['name'] == $ua['os']);
     }
     
 }
