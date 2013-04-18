@@ -1,17 +1,20 @@
 <?php
 
 namespace Sail\Parser;
+
 use Sail\Useragent\ParserAbstract;
 
 class UAS extends ParserAbstract
 {
 
-    public function setUA($ua) {
+    public function setUA($ua)
+    {
         parent::setUA($ua);
         $this->parse();
     }
 
-    private function parse() {
+    private function parse()
+    {
         $info = UAS\Parser::parse($this->ua);
 
         $this->browser = array(
@@ -41,8 +44,5 @@ class UAS extends ParserAbstract
             'ua'        => $this->ua
         );
 
-
     }
-
-
 }

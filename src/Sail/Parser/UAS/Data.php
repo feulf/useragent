@@ -13,7 +13,7 @@ trait Data
     private static $cache_filename = 'UAS.php';
     private static $cache_filepath;
 
-    public static function getData() 
+    public static function getData()
     {
         // todo check timeout time (use aps)
         if (self::$data) {
