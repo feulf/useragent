@@ -16,7 +16,7 @@ class Browser
     public static function parse($ua)
     {
         // get the browser
-        foreach( self::$browser_list as $preg_id => $id ) {
+        foreach (self::$browser_list as $preg_id => $id) {
             if ( strpos($ua, $preg_id) ) {
                 break;
             }
@@ -24,34 +24,27 @@ class Browser
 
         // get the version
         switch ($id) {
-
             case 'IE':
                 preg_match("#MSIE ([^\s;]*)#", $ua, $match);
                 $version = $match[1];
                 $name = "$id $version";
                 break;
-                
             case 'Safari':
                 preg_match("/Version\/([^\s]*)/", $ua, $match);
                 $version = $match[1];
                 $name = "$id $version";
                 break;
-
-            default :
+            default:
                 preg_match("#$id/([^\s]*)#", $ua, $match);
                 $version = $match[1];
                 $name = "$id $version";
         }
-        
-        // 
 
-        return array( 
+        return array(
             'id'      => $id,
             'name'    => $name,
             'version' => $version,
         );
-        
-        
+   
     }
-    
 }

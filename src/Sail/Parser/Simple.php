@@ -1,12 +1,13 @@
 <?php
 
 namespace Sail\Parser;
+
 use Sail\Useragent\ParserAbstract;
 
 class Simple extends ParserAbstract
 {
 
-    public function getBrowser() 
+    public function getBrowser()
     {
         if (!$this->browser) {
             $this->browser = Simple\Browser::parse($this->ua);
@@ -48,6 +49,4 @@ class Simple extends ParserAbstract
             'ua'        => $this->ua
         );
     }
-
-
 }

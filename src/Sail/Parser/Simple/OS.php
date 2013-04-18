@@ -15,7 +15,7 @@ class OS
     public static function parse($ua)
     {
         // get the browser
-        foreach( self::$os_list as $id => $os ) {
+        foreach (self::$os_list as $id => $os) {
             if (strpos($ua, $id)) {
                 break;
             }
@@ -34,11 +34,10 @@ class OS
                 break;
         }
         
-        return array( 
+        return array(
             'id'      => $id,
             'name'    => $name,
         );
         
     }
-    
 }

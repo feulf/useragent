@@ -32,18 +32,17 @@ class Platform
     {
 
         // get the browser
-        foreach( self::$platform_list as $id => $platform ) {
+        foreach (self::$platform_list as $id => $platform) {
             if ( strpos($ua, $id) ) {
                 break;
             }
         }
         
-        return array( 
+        return array(
             'id'        => $id,
             'platform'  => $platform,
         );
         
         
     }
-    
 }
