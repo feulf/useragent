@@ -64,8 +64,8 @@ Abstract Class ParserAbstract implements ParserInterface
         return $this->info;
     }
 
-    final private function reset(){
-
+    final private function reset()
+    {
         $this->browser = array();
         $this->os = array();
         $this->platform = array();
@@ -77,7 +77,5 @@ Abstract Class ParserAbstract implements ParserInterface
             'is_mobile' => $this->is_mobile,
             'ua'        => $this->ua,
         );
-        
     }
-
 }

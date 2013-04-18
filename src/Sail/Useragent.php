@@ -1,5 +1,7 @@
 <?php
 
+namespace Sail;
+
 /**
  *  Sail\UserAgent
  *  --------
@@ -19,7 +21,6 @@
  *  @version 1.0
  */
 
-namespace Sail;
 use Sail\Useragent\UserAgentInterface;
 
 class Useragent implements UseragentInterface

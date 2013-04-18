@@ -25,5 +25,4 @@ Interface ParserInterface
 
     // get the device (iphone, ipad)
     public function isMobile();
-
 }
