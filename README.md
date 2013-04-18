@@ -12,7 +12,7 @@ Install with composer:
 ``` json
 {
     "require": {
-        "sail/useragent": "1.0.*"
+        "sail/useragent": "dev-master"
     }
 }
 ```
