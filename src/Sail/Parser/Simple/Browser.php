@@ -8,7 +8,7 @@ class Browser
     protected static $browser_list = array(
         'Chrome'  => 'Chrome',
         'Firefox' => 'Firefox',
-        'MSIE'    => 'IE',
+        'MSIE'    => 'MSIE',
         'Safari'  => 'Safari',
         'Unknown' => 'Unknown'
     );
