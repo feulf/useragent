@@ -21,7 +21,7 @@ namespace Sail;
  *  @version 1.0
  */
 
-use Sail\Useragent\UserAgentInterface;
+use Sail\Useragent\UseragentInterface;
 
 class Useragent implements UseragentInterface
 {
