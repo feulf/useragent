@@ -39,6 +39,19 @@ class Browser
                 $version = $match[1];
                 $name = "$id $version";
         }
+        
+        // handle IE11 new user agent
+        preg_match('/MSIE (.*?);/', $ua, $matches);
+        if (count($matches)<2){
+            preg_match('/Trident\/\d{1,2}.\d{1,2}; rv:([0-9]*)/', $ua, $matches);
+        }
+        
+        if (count($matches)>1){
+            // then we're using IE
+            $id = 'MSIE';
+            $name = 'MSIE';
+            $version = $matches[1];
+        }
 
         return array(
             'id'      => $id,
