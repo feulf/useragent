@@ -52,6 +52,12 @@ class Browser
             $name = 'MSIE';
             $version = $matches[1];
         }
+        
+        if (strpos($ua, 'Trident/7.0') !== false && strpos($ua, 'rv:11.0') !== false) {
+            $id = 'MSIE';
+            $name = 'MSIE';
+            $version = '11';
+        }
 
         return array(
             'id'      => $id,
