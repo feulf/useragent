@@ -36,8 +36,10 @@ class Browser
                 break;
             default:
                 preg_match("#$id/([^\s]*)#", $ua, $match);
-                $version = $match[1];
-                $name = "$id $version";
+                if(count($match)>0){
+                    $version = $match[1];
+                    $name = "$id $version";
+                }
         }
         
         // handle IE11 new user agent
