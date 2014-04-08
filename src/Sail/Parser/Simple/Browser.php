@@ -15,6 +15,9 @@ class Browser
 
     public static function parse($ua)
     {
+        $name = null;
+        $version = null;
+        
         // get the browser
         foreach (self::$browser_list as $preg_id => $id) {
             if ( strpos($ua, $preg_id) ) {
