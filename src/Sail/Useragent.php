@@ -87,7 +87,7 @@ class Useragent implements UseragentInterface
      */
     public function isMobile()
     {
-        return $this->parser->isMobile();
+        return filter_var($this->parser->isMobile(),FILTER_VALIDATE_BOOLEAN);
     }
 
     /**

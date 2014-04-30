@@ -15,6 +15,9 @@ class Browser
 
     public static function parse($ua)
     {
+        $name = null;
+        $version = null;
+        
         // get the browser
         foreach (self::$browser_list as $preg_id => $id) {
             if ( strpos($ua, $preg_id) ) {
@@ -36,8 +39,10 @@ class Browser
                 break;
             default:
                 preg_match("#$id/([^\s]*)#", $ua, $match);
-                $version = $match[1];
-                $name = "$id $version";
+                if(count($match)>0){
+                    $version = $match[1];
+                    $name = "$id $version";
+                }
         }
         
         // handle IE11 new user agent
