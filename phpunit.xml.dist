@@ -3,7 +3,7 @@
 <phpunit bootstrap="tests/bootstrap.php" colors="true">
     <testsuites>
         <testsuite name="Useragent Test Suite">
-            <directory>tests/Useragent/</directory>
+            <directory>tests/UserAgent/</directory>
         </testsuite>
     </testsuites>
 
