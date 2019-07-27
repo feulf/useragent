@@ -1,4 +1,4 @@
-# Sail\UserAgent
+# Sail\Useragent
 
 This Library detect the browser and all its informations, such as the browser name and version, the OS and the platform. 
 It uses Dependency Injection to load a Parser library, so you can choose the level of details you need from the detection.
