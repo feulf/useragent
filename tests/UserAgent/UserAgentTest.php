@@ -1,10 +1,13 @@
 <?php
 
-use Sail\UserAgent;
+namespace Sail;
+
+use Sail\Useragent;
 use Sail\Parser\Simple;
+use PHPUnit\Framework\TestCase;
 
-class Sail_UserAgentTest extends PHPUnit_Framework_TestCase {
-
+class UserAgentTest extends TestCase
+{
     // ua obj
     protected $ua;
 
@@ -22,15 +25,17 @@ class Sail_UserAgentTest extends PHPUnit_Framework_TestCase {
                 'browser' => 'Safari 3.2',
                 'version' => '3.2',
         ),
-        
+
     );
 
-    public function setup(){
+    protected function setup()
+    {
         $this->ua = new UserAgent();
         $this->ua->pushParser(new Simple());
     }
- 
-    public function testGetUA(){
+
+    public function testGetUA()
+    {
         $ua = $this->useragent['Chrome'];
         $this->ua->setUA($ua['string']);
         $this->assertTrue($this->ua->getUA() == $ua['string']);
@@ -40,7 +45,8 @@ class Sail_UserAgentTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($this->ua->getUA() == $ua['string']);
     }
 
-    public function testGetBrowser() {
+    public function testGetBrowser()
+    {
         $ua = $this->useragent['Chrome'];
         $this->ua->setUA($ua['string']);
         $this->assertTrue($this->ua->getBrowser()['name'] == $ua['browser']);
@@ -49,20 +55,21 @@ class Sail_UserAgentTest extends PHPUnit_Framework_TestCase {
         $this->ua->setUA($ua['string']);
         $this->assertTrue($this->ua->getBrowser()['name'] == $ua['browser']);
     }
-    
-    public function testGetBrowserVersion() {
-        
+
+    public function testGetBrowserVersion()
+    {
         $ua = $this->useragent['Chrome'];
         $this->ua->setUA($ua['string']);
         $this->assertTrue($this->ua->getBrowser()['version'] == $ua['version']);
 
         $ua = $this->useragent['Safari'];
         $this->ua->setUA($ua['string']);
-        
+
         $this->assertTrue($this->ua->getBrowser()['version'] == $ua['version']);
     }
-    
-    public function testGetOS() {
+
+    public function testGetOS()
+    {
         $ua = $this->useragent['Chrome'];
         $this->ua->setUA($ua['string']);
         $this->assertTrue($this->ua->getOS()['name'] == $ua['os']);
@@ -71,5 +78,4 @@ class Sail_UserAgentTest extends PHPUnit_Framework_TestCase {
         $this->ua->setUA($ua['string']);
         $this->assertTrue($this->ua->getOS()['name'] == $ua['os']);
     }
-    
 }
