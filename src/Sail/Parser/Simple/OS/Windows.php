@@ -22,7 +22,7 @@ class Windows{
             'XBLWP7'               => 'Windows Phone 7',
             'Windows NT 6.0'       => 'Windows Vista',
             'Windows NT 5.1'       => 'Windows XP',
-            ''                     => 'Other Windows',
+            ' '                     => 'Other Windows',
     );
     
     public static function parse($ua) {
