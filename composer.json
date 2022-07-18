@@ -1,5 +1,5 @@
 {
-    "name": "sail/useragent",
+    "name": "justin-oh/useragent",
     "description": "Library to detect the browser and all its info (OS, Platform, ...)",
     "keywords":["useragent","browser-detection"],
     "homepage": "http://github.com/rainphp/useragent",
